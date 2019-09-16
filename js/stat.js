@@ -45,12 +45,12 @@ var getMaxElement = function (arr) {
 
 var getColorRandom = function (color) {
   return 'hsl(' + color + ',' + Math.random() * 100 + '%, 50%)';
-}
+};
 
 var getTitle = function (ctx, heightTitle) {
   ctx.fillText('Ура вы победили!', CLOUD_X + GAP_BORDER, CLOUD_Y + heightTitle / 2);
   ctx.fillText('Список результатов:', CLOUD_X + GAP_BORDER, CLOUD_Y + heightTitle);
-}
+};
 
 var getBar = function (name, ctx, times, i, heightTitle) {
   var maxTime = getMaxElement(times);
@@ -63,7 +63,7 @@ var getBar = function (name, ctx, times, i, heightTitle) {
   ctx.fillRect(barX, barY - heightCurrentColumn, BAR_WIDTH, heightCurrentColumn);
 
   ctx.fillText(name, barX, barY + GAP + FONT_GAP);
-}
+};
 
 window.renderStatistics = function (ctx, names, times) {
   renderCloud(ctx, CLOUD_X + GAP, CLOUD_Y + GAP, COLOR_SHADOW);
@@ -75,7 +75,7 @@ window.renderStatistics = function (ctx, names, times) {
 
   getTitle(ctx, heightTitle);
 
-  names.forEach(function(element, i) {
+  names.forEach(function (element, i) {
     ctx.fillStyle = (element === PLAYER_NAME) ? COLOR_YOU : getColorRandom(250);
 
     getBar(element, ctx, times, i, heightTitle);
