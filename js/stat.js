@@ -56,8 +56,7 @@ window.renderStatistics = function (ctx, names, times) {
   for (var i = 0; i < names.length; i++) {
     if (names[i] === playerName) {
       ctx.fillStyle = 'rgba(255, 0, 0, 1)';
-    }
-    else {
+    } else {
       ctx.fillStyle = 'hsl(250,' + this.Math.random() * 100 + '%, 50%)';
     }
 
