@@ -23,8 +23,8 @@ var getRandom = function (max) {
 var getWizards = function () {
   for (var i = 0; i < 4; i++) {
 
-    wizards.push({name: WIZARD_NAMES[getRandom(WIZARD_NAMES.length - 1)] + ' ' + WIZARD_SURNAMES[getRandom(WIZARD_SURNAMES.length - 1)],                  coatColor: WIZARD_COAT_COLOR[getRandom(WIZARD_COAT_COLOR.length - 1)],                  eyesColor: WIZARD_EYES_COLOR[getRandom(WIZARD_EYES_COLOR.length - 1)]});
-  };
+    wizards.push({name: WIZARD_NAMES[getRandom(WIZARD_NAMES.length - 1)] + ' ' + WIZARD_SURNAMES[getRandom(WIZARD_SURNAMES.length - 1)], coatColor: WIZARD_COAT_COLOR[getRandom(WIZARD_COAT_COLOR.length - 1)], eyesColor: WIZARD_EYES_COLOR[getRandom(WIZARD_EYES_COLOR.length - 1)]});
+  }
 };
 
 getWizards();
