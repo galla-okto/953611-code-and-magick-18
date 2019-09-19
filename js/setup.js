@@ -22,7 +22,7 @@ var wizards = [];
 
 var getWizardName = function () {
   return WIZARD_NAMES[getRandom(WIZARD_NAMES.length - 1)] + ' ' + WIZARD_SURNAMES[getRandom(WIZARD_SURNAMES.length - 1)];
-}
+};
 
 var getWizards = function () {
   for (var i = 0; i < WIZARD_QUANTITY; i++) {
