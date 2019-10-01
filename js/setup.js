@@ -119,6 +119,14 @@ var closePopup = function () {
   setupFireBallWrap.removeEventListener('click', onElementWizardPress);
 };
 
+var openAndClosePopup = function (evt) {
+  if (evt.target.className === 'setup-open-icon') {
+    openPopup();
+  } else if (evt.target.className === 'setup-close') {
+    closePopup();
+  }
+};
+
 userNameInput.addEventListener('invalid', function () {
   if (userNameInput.validity.tooShort) {
     userNameInput.setCustomValidity('Имя должно состоять минимум из 2-х символов');
@@ -146,18 +154,18 @@ userDialog.classList.remove('hidden');
 
 showWizard();
 
-setupOpen.addEventListener('click', openPopup);
+setupOpen.addEventListener('click', openAndClosePopup);
 
 setupOpen.addEventListener('keydown', function (evt) {
   if (evt.keyCode === ENTER_KEYCODE) {
-    openPopup();
+    openAndClosePopup;
   }
 });
 
-setupClose.addEventListener('click', closePopup);
+setupClose.addEventListener('click', openAndClosePopup);
 
 setupClose.addEventListener('keydown', function (evt) {
   if (evt.keyCode === ENTER_KEYCODE) {
-    closePopup();
+    openAndClosePopup;
   }
 });
