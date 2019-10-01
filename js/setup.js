@@ -151,7 +151,7 @@ setupClose.addEventListener('click', function () {
 setupClose.addEventListener('keydown', function (evt) {
   if (evt.keyCode === ENTER_KEYCODE) {
     closePopup();
-  };
+  }
 });
 
 setupWizardCoat.addEventListener('click', function () {
