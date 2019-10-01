@@ -158,7 +158,7 @@ setupOpen.addEventListener('click', openAndClosePopup);
 
 setupOpen.addEventListener('keydown', function (evt) {
   if (evt.keyCode === ENTER_KEYCODE) {
-    openAndClosePopup;
+    openAndClosePopup();
   }
 });
 
@@ -166,6 +166,6 @@ setupClose.addEventListener('click', openAndClosePopup);
 
 setupClose.addEventListener('keydown', function (evt) {
   if (evt.keyCode === ENTER_KEYCODE) {
-    openAndClosePopup;
+    openAndClosePopup();
   }
 });
