@@ -25,7 +25,7 @@ var wizards = [];
 
 var setup = document.querySelector('.setup');
 var setupOpen = document.querySelector('.setup-open');
-var setupClose = setup.querySelector(".setup-close");
+var setupClose = setup.querySelector('.setup-close');
 var userNameInput = setup.querySelector('.setup-user-name');
 var setupWizard = setup.querySelector('.setup-wizard');
 var setupWizardCoat = setupWizard.querySelector('.wizard-coat');
@@ -73,21 +73,41 @@ var showWizard = function () {
   userDialog.querySelector('.setup-similar').classList.remove('hidden');
 };
 
-var openPopup = function() {
+var onPopupEscPress = function (evt) {
+  if ((evt.keyCode === ESC_KEYCODE) && (evt.target.className !== 'setup-user-name')) {
+    closePopup();
+  }
+};
+
+var openPopup = function () {
   setup.classList.remove('hidden');
+  document.addEventListener('keydown', onPopupEscPress);
 };
 
-var closePopup = function() {
+var closePopup = function () {
   setup.classList.add('hidden');
+  document.removeEventListener('keydown', onPopupEscPress);
 };
 
-getWizards();
+var changeColor = function (element, arrayColor) {
+  var color = arrayColor[getRandom(arrayColor.length - 1)];
 
-userDialog.classList.remove('hidden');
+  if (element.classList.contains('wizard-coat')) {
+    element.style.fill = color;
+    coatColor.value = color;
+  } else {
+    element.style.fill = color;
+    eyesColor.value = color;
+  }
+};
 
-showWizard();
+var changeBackground = function (element, arrayColor) {
+  var color = arrayColor[getRandom(arrayColor.length - 1)];
+  element.style.background = color;
+  fireballColor.value = color;
+};
 
-userNameInput.addEventListener('invalid', function (evt) {
+userNameInput.addEventListener('invalid', function () {
   if (userNameInput.validity.tooShort) {
     userNameInput.setCustomValidity('Имя должно состоять минимум из 2-х символов');
   } else if (userNameInput.validity.tooLong) {
@@ -108,21 +128,11 @@ userNameInput.addEventListener('input', function (evt) {
   }
 });
 
-var onPopupEscPress = function(evt) {
-  if ((evt.keyCode === ESC_KEYCODE) && (evt.target.className != 'setup-user-name')) {
-    closePopup();
-  }
-};
+getWizards();
 
-var openPopup = function() {
-  setup.classList.remove('hidden');
-  document.addEventListener('keydown', onPopupEscPress);
-};
+userDialog.classList.remove('hidden');
 
-var closePopup = function() {
-  setup.classList.add('hidden');
-  document.removeEventListener('keydown', onPopupEscPress);
-};
+showWizard();
 
 setupOpen.addEventListener('click', function() {
   openPopup();
@@ -143,24 +153,6 @@ setupClose.addEventListener('keydown', function(evt) {
     closePopup();
   }
 });
-
-var changeColor = function(element, arrayColor) {
-  var color = arrayColor[getRandom(arrayColor.length - 1)];
-
-  if (element.classList.contains('wizard-coat')) {
-    element.style.fill = color;
-    coatColor.value = color;
-  } else {
-    element.style.fill = color;
-    eyesColor.value = color;
-  }
-};
-
-var changeBackground = function(element, arrayColor) {
-  var color = arrayColor[getRandom(arrayColor.length - 1)];
-  element.style.background = color;
-  fireballColor.value = color;
-};
 
 setupWizardCoat.addEventListener('click', function() {
   changeColor(setupWizardCoat, WIZARD_COAT_COLOR);
