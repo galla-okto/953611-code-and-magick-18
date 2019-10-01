@@ -134,34 +134,34 @@ userDialog.classList.remove('hidden');
 
 showWizard();
 
-setupOpen.addEventListener('click', function() {
+setupOpen.addEventListener('click', function () {
   openPopup();
 });
 
-setupOpen.addEventListener('keydown', function(evt) {
+setupOpen.addEventListener('keydown', function (evt) {
   if (evt.keyCode === ENTER_KEYCODE) {
     openPopup();
   }
 });
 
-setupClose.addEventListener('click', function() {
+setupClose.addEventListener('click', function () {
   closePopup();
 });
 
-setupClose.addEventListener('keydown', function(evt) {
+setupClose.addEventListener('keydown', function (evt) {
   if (evt.keyCode === ENTER_KEYCODE) {
     closePopup();
   }
 });
 
-setupWizardCoat.addEventListener('click', function() {
+setupWizardCoat.addEventListener('click', function () {
   changeColor(setupWizardCoat, WIZARD_COAT_COLOR);
 });
 
-setupWizardEyes.addEventListener('click', function() {
+setupWizardEyes.addEventListener('click', function () {
   changeColor(setupWizardEyes, WIZARD_EYES_COLOR);
 });
 
-setupFireBallWrap.addEventListener('click', function() {
+setupFireBallWrap.addEventListener('click', function () {
   changeBackground(setupFireBallWrap, WIZARD_FIREBALL_COLOR);
 });
