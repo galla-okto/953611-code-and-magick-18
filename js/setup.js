@@ -81,18 +81,20 @@ var onPopupEscPress = function (evt) {
 };
 
 var onElementWizardPress = function (evt) {
+  var color;
+
   if (evt.target.className.baseVal === 'wizard-coat') {
-    var color = WIZARD_COAT_COLOR[getRandom(WIZARD_COAT_COLOR.length - 1)];
+    color = WIZARD_COAT_COLOR[getRandom(WIZARD_COAT_COLOR.length - 1)];
 
     setupWizardCoat.style.fill = color;
     coatColor.value = color;
   } else if (evt.target.className.baseVal === 'wizard-eyes') {
-    var color = WIZARD_EYES_COLOR[getRandom(WIZARD_EYES_COLOR.length - 1)];
+    color = WIZARD_EYES_COLOR[getRandom(WIZARD_EYES_COLOR.length - 1)];
 
     setupWizardEyes.style.fill = color;
     eyesColor.value = color;
   } else if (evt.target.className === 'setup-fireball') {
-    var color = WIZARD_FIREBALL_COLOR[getRandom(WIZARD_FIREBALL_COLOR.length - 1)];
+    color = WIZARD_FIREBALL_COLOR[getRandom(WIZARD_FIREBALL_COLOR.length - 1)];
 
     setupFireBallWrap.style.background = color;
     fireballColor.value = color;
