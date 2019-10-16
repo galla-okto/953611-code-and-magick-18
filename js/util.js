@@ -18,7 +18,7 @@
     getRandom: function (max) {
       return Math.round(Math.random() * max);
     },
-    colorize : function (element, arrayColors) {
+    colorize: function (element, arrayColors) {
       element.addEventListener('click', function () {
         var color = arrayColors[window.util.getRandom(arrayColors.length - 1)];
 
