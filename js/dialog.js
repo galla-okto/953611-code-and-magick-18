@@ -25,8 +25,8 @@
     setup.classList.remove('hidden');
     document.addEventListener('keydown', onPopupEscPress);
 
-    window.util.colorize(setupWizardCoat, WIZARD_COAT_COLOR);
-    window.util.colorize(setupWizardEyes, WIZARD_EYES_COLOR);
+    window.util.colorize(setupWizardCoat, window.WIZARD_COAT_COLOR);
+    window.util.colorize(setupWizardEyes, window.WIZARD_EYES_COLOR);
     window.util.colorize(setupFireBallWrap, WIZARD_FIREBALL_COLOR);
   };
 

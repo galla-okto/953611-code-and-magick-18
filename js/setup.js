@@ -23,8 +23,8 @@
 
       wizards.push({
         name: getWizardName(),
-        coatColor: WIZARD_COAT_COLOR[window.util.getRandom(WIZARD_COAT_COLOR.length - 1)],
-        eyesColor: WIZARD_EYES_COLOR[window.util.getRandom(WIZARD_EYES_COLOR.length - 1)]
+        coatColor: window.WIZARD_COAT_COLOR[window.util.getRandom(window.WIZARD_COAT_COLOR.length - 1)],
+        eyesColor: window.WIZARD_EYES_COLOR[window.util.getRandom(window.WIZARD_EYES_COLOR.length - 1)]
       });
     }
   };

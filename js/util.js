@@ -32,7 +32,7 @@
         } else {
           element.style.fill = color;
         }
-      })
+      });
     }
   };
 })();
