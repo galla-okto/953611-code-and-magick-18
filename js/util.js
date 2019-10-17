@@ -11,7 +11,7 @@
 
   window.util = {
     isEscEvent: function (evt, action) {
-      if (evt.keyCode === ESC_KEYCODE) {
+      if ((evt.keyCode === ESC_KEYCODE) && (evt.target.className !== 'setup-user-name')) {
         action();
       }
     },
